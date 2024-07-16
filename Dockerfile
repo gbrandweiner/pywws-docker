@@ -9,7 +9,7 @@ COPY qemu-${ARCH}-static /usr/bin
 RUN uname -ar > /uname.build
 RUN apk --update add file
 
-LABEL maintainer "Matt Hilton <matthilton2005@gmail.com>"
+LABEL maintainer "Gregor Brandweiner <gregor@brandweiner.at>"
 
 RUN apk update
 RUN apk add --no-cache \
