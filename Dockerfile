@@ -11,7 +11,9 @@ RUN apk --update add file
 
 LABEL maintainer "Matt Hilton <matthilton2005@gmail.com>"
 
-RUN apk add --no-cache python3 \
+RUN apk update
+RUN apk add --no-cache \
+    python3 \
     libusb \
     py3-cffi \
     openssl \
@@ -23,6 +25,7 @@ RUN apk add --no-cache python3 \
     py3-cryptography \
     py3-paramiko \
     gnuplot \
+    bash
     && update-ca-certificates
 
 RUN pip3 install --upgrade pip
@@ -34,5 +37,7 @@ RUN pip3 install \
     pycrypto \
     paho-mqtt \
     pywws
+
+RUN pip3 install -U pywws
 
 VOLUME ["/var/data"]
